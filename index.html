@@ -8,14 +8,14 @@
       content="width=device-width, initial-scale=1, interactive-widget=resizes-content"
     />
 
-    <meta name="title" content="Nerimity" />
+    <meta name="title" content="Bloyid" />
 
     <meta name="theme-color" content="#000000" />
     <meta property="og:title" content="Nerimity" />
 
     <meta
       name="og:description"
-      content="Nerimity is a open source, modern and sleek chat app
+      content="Bloyud is a open source, modern and sleek chat app
                made for everyone with features such as the ability to
                make servers, a lot of customization and a lot more!"
     />
@@ -44,7 +44,7 @@
     // Remove PWA worker. Caused issues with updating Nerimity (I think?)
     navigator.serviceWorker?.getRegistrations().then((workers) => {
       workers.forEach((worker) => {
-        if (worker.active?.scriptURL === "https://nerimity.com/sw.js") {
+        if (worker.active?.scriptURL === "https://web.bloyid.com/sw.js") {
           worker.unregister().then(() => {
             console.log("Removed worker sw.js");
             location.reload();
