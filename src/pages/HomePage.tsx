@@ -105,7 +105,7 @@ export default function HomePage() {
     ? `https://github.com/Nerimity/nerimity-web/releases/${
         env.APP_VERSION ? `tag/${env.APP_VERSION}` : ""
       }`
-    : "https://github.com/Nerimity/nerimity-web/commits/main";
+    : "https://github.com/ukyyyy/nerimity-web/commits/main";
 
   return (
     <HomePageContainer class="home-page-container">
@@ -128,7 +128,7 @@ export default function HomePage() {
             opacity={0.7}
             style={{ "margin-top": "10px", "margin-bottom": "10px" }}
           >
-            Nerimity offers an elegant and feature-rich experience that sets it
+            Bloyid offers an elegant and feature-rich experience that sets it
             apart.
           </Text>
           <ButtonsContainer class="buttons-container">
@@ -141,7 +141,7 @@ export default function HomePage() {
               />
             </a>
             <a
-              href="https://github.com/Nerimity/nerimity-web"
+              href="https://github.com/ukyyyy/nerimity-web"
               target="_blank"
               rel="noopener noreferrer"
             >
