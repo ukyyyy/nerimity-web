@@ -194,7 +194,7 @@ render(() => {
 
   return (
     <MetaProvider>
-      <Title>Nerimity</Title>
+      <Title>Bloyid</Title>
       <Router root={Root}>
         <Route
           path="/app"
