@@ -38,6 +38,8 @@ import ContextMenuServerChannel from "../context-menu/ContextMenuServerChannel";
 import Button from "@/components/ui/Button";
 import { ChannelIcon } from "@/components/ChannelIcon";
 import { useCustomScrollbar } from "@/components/custom-scrollbar/CustomScrollbar";
+import { useCustomPortal } from "@/components/ui/custom-portal/CustomPortal";
+import { CreateChannelModal } from "../modals/CreateChannelModal";
 
 const ServerDrawer = () => {
   const params = useParams<{ serverId: string }>();
@@ -244,11 +246,14 @@ const CategoryContainer = styled(FlexColumn)`
   margin-bottom: 2px;
 `;
 const CategoryItemContainer = styled(FlexRow)`
-  margin-top: 5px;
-  margin-bottom: 5px;
   align-items: center;
   cursor: pointer;
-  padding: 4px;
+  border-radius: 8px;
+  transition: 0.2s;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
   padding-left: 8px;
 
   .label {
@@ -284,8 +289,13 @@ function CategoryItem(props: {
   onChannelContextMenu: (event: MouseEvent, channelId: string) => void;
 }) {
   const params = useParams();
-  const { channels } = useStore();
+  const { channels, account, serverMembers } = useStore();
   const [hovered, setHovered] = createSignal(false);
+  const { createPortal } = useCustomPortal();
+
+  const member = () => serverMembers.get(params.serverId, account.user()?.id!);
+  const hasModeratorPermission = () =>
+    member()?.hasPermission(ROLE_PERMISSIONS.MANAGE_CHANNELS);
 
   const sortedServerChannels = createMemo(() =>
     channels
@@ -296,6 +306,17 @@ function CategoryItem(props: {
     !props.channel.hasPermission(CHANNEL_PERMISSIONS.PUBLIC_CHANNEL, true);
 
   const [expanded, setExpanded] = createSignal(true);
+
+  const onAddChannelClick = (event: MouseEvent) => {
+    event.stopPropagation();
+    createPortal?.((close) => (
+      <CreateChannelModal
+        close={close}
+        serverId={params.serverId!}
+        categoryId={props.channel.id}
+      />
+    ));
+  };
 
   return (
     <Show when={!isPrivateCategory() || sortedServerChannels().length}>
@@ -318,13 +339,27 @@ function CategoryItem(props: {
           </Show>
           <div class="label">{props.channel.name}</div>
 
-          <Button
-            iconClass="expand_icon"
-            padding={2}
-            margin={[0, 2, 0, 0]}
-            iconName="expand_more"
-            iconSize={16}
-          />
+          <div class={styles.categoryButtons}>
+            <Show when={hasModeratorPermission()}>
+              <Button
+                class={styles.addChannelButton}
+                padding={4}
+                margin={0}
+                iconName="add"
+                iconSize={16}
+                onClick={onAddChannelClick}
+              />
+            </Show>
+
+            <Button
+              iconClass="expand_icon"
+              padding={4}
+              class={styles.expandCategoryButton}
+              margin={0}
+              iconName="expand_more"
+              iconSize={16}
+            />
+          </div>
         </CategoryItemContainer>
 
         <Show when={sortedServerChannels().length}>
