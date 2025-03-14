@@ -137,9 +137,9 @@ export default function WindowSettings() {
                 name: "YouTube",
                 startedAt: Date.now() - 3000,
                 endsAt: Date.now() + 10000,
-                imgSrc: "https://nerimity.com/assets/logo.png",
+                imgSrc: "https://web.bloyid.com/assets/logo.png",
                 link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                title: "Why Nerimity is the best",
+                title: "Why Bloyid is the best",
                 subtitle: "Good YouTuber",
               }}
             />
@@ -152,10 +152,10 @@ export default function WindowSettings() {
                 name: "Spotify",
                 startedAt: Date.now() - 30000,
                 endsAt: Date.now() + 100000,
-                imgSrc: "https://nerimity.com/assets/logo.png",
+                imgSrc: "https://web.bloyid.com/assets/logo.png",
                 link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                title: "Ner Ner Nerimity!",
-                subtitle: "Nerimity",
+                title: "Blo Blo Bloyid!",
+                subtitle: "Bloyid",
               }}
             />
           </ExampleActivityContainer>
@@ -198,7 +198,7 @@ export default function WindowSettings() {
       <Show when={!isElectron}>
         <Notice
           type="info"
-          description="To modify these settings, you must download the Nerimity desktop app."
+          description="To modify these settings, you must download the Bloyid desktop app."
         />
       </Show>
 

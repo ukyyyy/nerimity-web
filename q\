@@ -1,0 +1,231 @@
+[33mcommit 653832ec57b72385a58e3e2c111a35bf0be5e1e7[m
+Merge: e0cc2ae9 68c914d0
+Author: git stash <git@stash>
+Date:   Thu Mar 13 21:27:07 2025 +0000
+
+    WIP on main: e0cc2ae9 Update HomePage.tsx
+
+[1mdiff --cc example.env[m
+[1mindex 05213cad,05213cad..00000000[m
+[1mdeleted file mode 100644,100644[m
+[1m--- a/example.env[m
+[1m+++ /dev/null[m
+[36m@@@ -1,13 -1,13 +1,0 @@@[m
+[31m--VITE_SERVER_URL="https://nerimity.com"[m
+[31m--VITE_WS_URL="https://nerimity.com"[m
+[31m--VITE_APP_URL="http://local.nerimity.com"[m
+[31m--VITE_MOBILE_WIDTH=850[m
+[31m--VITE_DEV_MODE="true"[m
+[31m--VITE_MESSAGE_LIMIT=50[m
+[31m--VITE_TURNSTILE_SITEKEY="0x4AAAAAAABO1ilip_YaVHJk"[m
+[31m--VITE_EMOJI_URL="https://nerimity.com/twemojis/"[m
+[31m--VITE_NERIMITY_CDN="https://cdn.nerimity.com/"[m
+[31m--VITE_OFFICIAL_SERVER="nerimity"[m
+[31m--[m
+[31m--VITE_GOOGLE_CLIENT_ID=""[m
+[31m--VITE_GOOGLE_API_KEY=""[m
+[1mdiff --cc index.html[m
+[1mindex 52b9643c,52b9643c..62c9ecc3[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@@ -11,18 -11,18 +11,18 @@@[m
+      <meta name="title" content="Bloyid" />[m
+  [m
+      <meta name="theme-color" content="#000000" />[m
+[31m--    <meta property="og:title" content="Nerimity" />[m
+[32m++    <meta property="og:title" content="Bloyid" />[m
+  [m
+      <meta[m
+        name="og:description"[m
+[31m--      content="Bloyud is a open source, modern and sleek chat app[m
+[32m++      content="Bloyid is a open source, modern and sleek chat app[m
+                 made for everyone with features such as the ability to[m
+                 make servers, a lot of customization and a lot more!"[m
+      />[m
+  [m
+      <meta[m
+        name="description"[m
+[31m--      content="Nerimity is a open source, modern and sleek chat app[m
+[32m++      content="Bloyid is a open source, modern and sleek chat app[m
+                 made for everyone with features such as the ability to[m
+                 make servers, a lot of customization and a lot more!"[m
+      />[m
+[1mdiff --cc public/assets/logo.png[m
+[1mindex 03f2a212,03f2a212..f66443d9[m
+Binary files differ
+[1mdiff --cc public/assets/profile.png[m
+[1mindex e6ae04e4,e6ae04e4..f66443d9[m
+Binary files differ
+[1mdiff --cc public/favicon-alert.ico[m
+[1mindex 3a867bd5,3a867bd5..696db2fa[m
+Binary files differ
+[1mdiff --cc public/favicon.ico[m
+[1mindex 271b8a86,271b8a86..bb450c61[m
+Binary files differ
+[1mdiff --cc public/manifest.webmanifest[m
+[1mindex 2eb8e2e2,2eb8e2e2..8467f61b[m
+[1m--- a/public/manifest.webmanifest[m
+[1m+++ b/public/manifest.webmanifest[m
+[36m@@@ -1,6 -1,6 +1,6 @@@[m
+  {[m
+[31m--  "name": "Nerimity",[m
+[31m--  "short_name": "Nerimity",[m
+[32m++  "name": "Bloyid",[m
+[32m++  "short_name": "Bloyid",[m
+    "theme_color": "#77a8f3",[m
+    "description": "A modern and sleek chat app.",[m
+    "id": "/app",[m
+[1mdiff --cc src/chat-api/Bitwise.ts[m
+[1mindex f23a33d4,f23a33d4..92185209[m
+[1m--- a/src/chat-api/Bitwise.ts[m
+[1m+++ b/src/chat-api/Bitwise.ts[m
+[36m@@@ -56,16 -56,16 +56,16 @@@[m [mexport const USER_BADGES = [m
+    },[m
+  [m
+    FOUNDER: {[m
+[31m--    name: "Founder",[m
+[32m++    name: "Owner",[m
+      bit: USER_BADGE_BITS.FOUNDER,[m
+[31m--    description: "Creator of Nerimity",[m
+[32m++    description: "Owner of Bloyid",[m
+      color: "linear-gradient(90deg, #4fffbd 0%, #4a5efc 100%);",[m
+      credit: "Avatar Border by upklyak on Freepik",[m
+    },[m
+    ADMIN: {[m
+      name: "Admin",[m
+      bit: USER_BADGE_BITS.ADMIN,[m
+[31m--    description: "Admin of Nerimity",[m
+[32m++    description: "Admin of Bloyid",[m
+      color:[m
+        "linear-gradient(90deg, rgba(224,26,185,1) 0%, rgba(64,122,255,1) 100%);",[m
+      credit: "Avatar Border by upklyak on Freepik",[m
+[36m@@@ -73,7 -73,7 +73,7 @@@[m
+    MOD: {[m
+      name: "Moderator",[m
+      bit: USER_BADGE_BITS.MOD,[m
+[31m--    description: "Moderator of Nerimity",[m
+[32m++    description: "Moderator of Bloyid",[m
+      color: "linear-gradient(90deg, #57acfa 0%, #1485ed 100%)",[m
+      credit: "Avatar Border by upklyak on Freepik",[m
+    },[m
+[1mdiff --cc src/common/MetaTitle.tsx[m
+[1mindex 4027bceb,4027bceb..af6f88a3[m
+[1m--- a/src/common/MetaTitle.tsx[m
+[1m+++ b/src/common/MetaTitle.tsx[m
+[36m@@@ -5,7 -5,7 +5,7 @@@[m [mimport env from "./env"[m
+  export const MetaTitle = (props: { children: JSXElement }) => {[m
+    const el = children(() => props.children);[m
+    const text = el.toArray().join(" ");[m
+[31m--  const full = `${text || ""} - Nerimity ${env.DEV_MODE ? "DEV" : ""}`;[m
+[32m++  const full = `${text || ""} - Bloyid ${env.DEV_MODE ? "DEV" : ""}`;[m
+  [m
+    return <Title>{full}</Title>;[m
+  };[m
+[1mdiff --cc src/components/ChangelogModal.tsx[m
+[1mindex 88ceeba0,88ceeba0..67ae7b55[m
+[1m--- a/src/components/ChangelogModal.tsx[m
+[1m+++ b/src/components/ChangelogModal.tsx[m
+[36m@@@ -26,8 -26,8 +26,8 @@@[m [mexport function ChangelogModal(props: [m
+        style={{ "text-decoration": "none" }}[m
+        href={[m
+          isRelease[m
+[31m--          ? "https://github.com/Nerimity/Nerimity-Web/releases"[m
+[31m--          : "https://github.com/Nerimity/nerimity-web/commits/main"[m
+[32m++          ? "https://github.com/ukyyyy/Nerimity-Web/releases"[m
+[32m++          : "https://github.com/ukyyyy/nerimity-web/commits/main"[m
+        }[m
+        target="_blank"[m
+        rel="noopener noreferrer"[m
+[1mdiff --cc src/components/PageHeader.tsx[m
+[1mindex b44ce941,b44ce941..e8e86820[m
+[1m--- a/src/components/PageHeader.tsx[m
+[1m+++ b/src/components/PageHeader.tsx[m
+[36m@@@ -151,7 -151,7 +151,7 @@@[m [mexport default function PageHeader(prop[m
+      <HeaderContainer class="header-container">[m
+        <A href="/" class={titleContainerStyle}>[m
+          <Logo src={appLogoUrl()} alt="logo" />[m
+[31m--        <Title>Nerimity</Title>[m
+[32m++        <Title>Bloyid</Title>[m
+        </A>[m
+        <Show when={!props.hideAccountInfo}>[m
+          <Switch fallback={<LogInLogOutSkeleton />}>[m
+[1mdiff --cc src/components/explore/ExploreServers.tsx[m
+[1mindex 631de1ec,631de1ec..9ea99106[m
+[1m--- a/src/components/explore/ExploreServers.tsx[m
+[1m+++ b/src/components/explore/ExploreServers.tsx[m
+[36m@@@ -157,7 -157,7 +157,7 @@@[m [mexport default function ExploreServers([m
+            margin-bottom: 10px;[m
+          `}[m
+          type="warn"[m
+[31m--        description="Servers are not moderated by Nerimity. Please report servers that break the TOS."[m
+[32m++        description="Servers are not moderated by Bloyid. Please report servers that break the TOS."[m
+        />[m
+  [m
+        <Text>Pinned Servers</Text>[m
+[1mdiff --cc src/github-api/index.ts[m
+[1mindex 4ed585fa,4ed585fa..bc26ac9d[m
+[1m--- a/src/github-api/index.ts[m
+[1m+++ b/src/github-api/index.ts[m
+[36m@@@ -1,4 -1,4 +1,4 @@@[m
+[31m--const owner = "Nerimity";[m
+[32m++const owner = "ukyyyy";[m
+  const repo = "nerimity-web";[m
+  [m
+  export interface Release {[m
+[1mdiff --cc src/pages/HomePage.tsx[m
+[1mindex 7ea9b11c,7ea9b11c..68dc3949[m
+[1m--- a/src/pages/HomePage.tsx[m
+[1m+++ b/src/pages/HomePage.tsx[m
+[36m@@@ -102,7 -102,7 +102,7 @@@[m [mexport default function HomePage() [m
+    const isRelease = env.APP_VERSION?.startsWith("v");[m
+  [m
+    const releaseLink = isRelease[m
+[31m--    ? `https://github.com/Nerimity/nerimity-web/releases/${[m
+[32m++    ? `https://github.com/ukyyyy/nerimity-web/releases/${[m
+          env.APP_VERSION ? `tag/${env.APP_VERSION}` : ""[m
+        }`[m
+      : "https://github.com/ukyyyy/nerimity-web/commits/main";[m
+[36m@@@ -180,7 -180,7 +180,7 @@@[m [mconst PlatformDownloadLinks = () => [m
+          <Button[m
+            onClick={() =>[m
+              window.open([m
+[31m--              "https://github.com/Nerimity/nerimity-desktop/releases/latest",[m
+[32m++              "https://github.com/ukyyyy/nerimity-desktop/releases/latest",[m
+                "_blank"[m
+              )[m
+            }[m
+[36m@@@ -192,7 -192,7 +192,7 @@@[m
+          <Button[m
+            onClick={() =>[m
+              window.open([m
+[31m--              "https://github.com/Nerimity/NerimityReactNative/releases/latest",[m
+[32m++              "https://github.com/ukyyyy/NerimityReactNative/releases/latest",[m
+                "_blank"[m
+              )[m
+            }[m
+[1mdiff --cc src/pages/RegisterPage.tsx[m
+[1mindex c00777e6,c00777e6..6fab2b54[m
+[1m--- a/src/pages/RegisterPage.tsx[m
+[1m+++ b/src/pages/RegisterPage.tsx[m
+[36m@@@ -140,7 -140,7 +140,7 @@@[m [mexport default function RegisterPage() [m
+              onSubmit={registerClicked}[m
+            >[m
+              <TitleContainer>[m
+[31m--              {t("registerPage.title", { appName: "Nerimity" })}[m
+[32m++              {t("registerPage.title", { appName: "Bloyid" })}[m
+              </TitleContainer>[m
+              <NoticesContainer gap={5}>[m
+                <span style={{ "margin-bottom": "6px" }}>[m
+[1mdiff --cc vite.config.ts[m
+[1mindex 07d7ce0f,07d7ce0f..6e1fbd91[m
+[1m--- a/vite.config.ts[m
+[1m+++ b/vite.config.ts[m
+[36m@@@ -35,5 -35,5 +35,8 @@@[m [mexport default defineConfig([m
+      host: true,[m
+      port: 3000,[m
+      open: true,[m
+[32m++    fs: {[m
+[32m++      allow: ["/root/nerimity-web"], // Erlaubt Zugriff auf dieses Verzeichnis[m
+[32m++    },[m
+    },[m
+  });[m

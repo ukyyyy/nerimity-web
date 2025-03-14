@@ -56,16 +56,16 @@ export const USER_BADGES = {
   },
 
   FOUNDER: {
-    name: "Founder",
+    name: "Owner",
     bit: USER_BADGE_BITS.FOUNDER,
-    description: "Creator of Nerimity",
+    description: "Owner of Bloyid",
     color: "linear-gradient(90deg, #4fffbd 0%, #4a5efc 100%);",
     credit: "Avatar Border by upklyak on Freepik",
   },
   ADMIN: {
     name: "Admin",
     bit: USER_BADGE_BITS.ADMIN,
-    description: "Admin of Nerimity",
+    description: "Admin of Bloyid",
     color:
       "linear-gradient(90deg, rgba(224,26,185,1) 0%, rgba(64,122,255,1) 100%);",
     credit: "Avatar Border by upklyak on Freepik",
@@ -73,7 +73,7 @@ export const USER_BADGES = {
   MOD: {
     name: "Moderator",
     bit: USER_BADGE_BITS.MOD,
-    description: "Moderator of Nerimity",
+    description: "Moderator of Bloyid",
     color: "linear-gradient(90deg, #57acfa 0%, #1485ed 100%)",
     credit: "Avatar Border by upklyak on Freepik",
   },

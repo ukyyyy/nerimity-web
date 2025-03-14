@@ -1,3 +1,4 @@
+
 import { lazy } from "solid-js";
 import { ExperimentIds } from "./experiments";
 
@@ -136,6 +137,13 @@ const settings: Setting[] = [
       () =>
         import("@/components/settings/developer/DeveloperApplicationSettings")
     ),
+  },
+  {
+    path: "wallet",
+    routePath: "/wallet",
+    name: "Wallet",
+    icon: "account_balance_wallet",
+    element: lazy(() => import("@/components/settings/Wallet")),
   },
   {
     path: "developer/applications",

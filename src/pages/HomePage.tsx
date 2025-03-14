@@ -102,7 +102,7 @@ export default function HomePage() {
   const isRelease = env.APP_VERSION?.startsWith("v");
 
   const releaseLink = isRelease
-    ? `https://github.com/Nerimity/nerimity-web/releases/${
+    ? `https://github.com/ukyyyy/nerimity-web/releases/${
         env.APP_VERSION ? `tag/${env.APP_VERSION}` : ""
       }`
     : "https://github.com/ukyyyy/nerimity-web/commits/main";
@@ -180,7 +180,7 @@ const PlatformDownloadLinks = () => {
         <Button
           onClick={() =>
             window.open(
-              "https://github.com/Nerimity/nerimity-desktop/releases/latest",
+              "https://github.com/ukyyyy/nerimity-desktop/releases/latest",
               "_blank"
             )
           }
@@ -192,7 +192,7 @@ const PlatformDownloadLinks = () => {
         <Button
           onClick={() =>
             window.open(
-              "https://github.com/Nerimity/NerimityReactNative/releases/latest",
+              "https://github.com/ukyyyy/NerimityReactNative/releases/latest",
               "_blank"
             )
           }

@@ -156,7 +156,7 @@ export default function ExploreServers() {
           margin-bottom: 10px;
         `}
         type="warn"
-        description="Servers are not moderated by Nerimity. Please report servers that break the TOS."
+        description="Servers are not moderated by Bloyid. Please report servers that break the TOS."
       />
 
       <Text>Pinned Servers</Text>
